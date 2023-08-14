@@ -10,5 +10,12 @@ jobs:
         run: echo "Hello World from our first action on ubuntu !"
       - name: multiline script
         run: |
-          nodeqq -v
+          node -v
           npm -v
+      - name: python commands
+        run: |
+          python -V
+          pip -V
+          import platform
+          print(platform.processor())
+        shell: python
