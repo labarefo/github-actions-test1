@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "c73bf01a-5916-43b2-b3c0-b9a428051b54",
+		"name": "github-actions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27059423"
+	},
+	"item": [
+		{
+			"name": "dispatches",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.github+json",
+						"type": "text"
+					},
+					{
+						"key": "X-GitHub-Api-Version",
+						"value": "2022-11-28",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"event_type\": \"on-demand-build\",\r\n    \"client_payload\": {\r\n        \"env\": \"production\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/labarefo/github-actions-test1/dispatches",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"labarefo",
+						"github-actions-test1",
+						"dispatches"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

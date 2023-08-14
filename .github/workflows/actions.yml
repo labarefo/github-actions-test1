@@ -1,11 +1,24 @@
 name: Actiond Workflows
 
-on: [push]
+on:
+#  push:
+#  schedule:
+#    # every 5 minutes
+#    - cron: '0/5 * * * *'
+#    # every 6 minutes
+#    - cron: '0/6 * * * *'
+  repository_dispatch:
+    types: [on-demand-build]
+  pull_request:
+    types: [opened, reopened, closed, assigned]
 
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
+      - name: Client Payload
+        run: |
+          echo "event.client_payload.env = ${{ toJson(github.event.client_payload.env) }}"
       - name: List Files
         run: |
           pwd
