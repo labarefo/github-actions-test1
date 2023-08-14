@@ -7,6 +7,8 @@ on:
 #    - cron: '0/5 * * * *'
 #    # every 6 minutes
 #    - cron: '0/6 * * * *'
+  repository_dispatch:
+    types: [my-build]
   pull_request:
     types: [opened, reopened, closed, assigned]
 
