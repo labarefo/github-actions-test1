@@ -10,8 +10,8 @@ jobs:
         run: |
           pwd
           ls -a
-          eco $GITHUB_SHA
-          eco $GITHUB_REPOSITORY
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
           echo ${{ github.token }}
           # git clone git@github:$GITHUB_REPOSITORY
