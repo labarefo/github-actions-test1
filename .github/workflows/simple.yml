@@ -10,5 +10,5 @@ jobs:
         run: echo "Hello World from our first action on ubuntu !"
       - name: multiline script
         run: |
-          node -v
+          nodeqq -v
           npm -v
