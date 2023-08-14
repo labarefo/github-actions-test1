@@ -16,6 +16,9 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
+      - name: Client Payload
+        run: |
+          echo "event.client_payload.env = ${{ toJson(github.event.client_payload.env) }}"
       - name: List Files
         run: |
           pwd
