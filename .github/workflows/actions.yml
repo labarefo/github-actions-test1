@@ -1,7 +1,20 @@
 name: Actiond Workflows
 
 on:
-#  push:
+  push:
+    branches:
+        - main
+        - master
+        - feature/* # matches any branch prefixed with feature/ : feature/abc, feature/xyz. Does not match : feature/abc/xyz
+        - feature/** # matches any branch prefixed with feature/ : feature/abc, feature/abc/xyz
+        - "!feature/featC" # except feature/featC
+    tags:
+        - v1.*
+
+    paths:
+      - "src/**.java"
+      - "!src/package-info.java" # except src/package-info.java
+
 #  schedule:
 #    # every 5 minutes
 #    - cron: '0/5 * * * *'
