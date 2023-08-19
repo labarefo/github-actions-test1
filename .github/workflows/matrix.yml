@@ -9,7 +9,17 @@ jobs:
       matrix:
         node_version: [6, 8, 10]
         os: [ubuntu-latest, windows-latest, macOS-latest]
-
+        exclude:
+          - node_version: 6
+            os: ubuntu-latest
+          - node_version: 8
+            os: macOS-latest
+        include:
+          - node_version: 8
+            os: ubuntu-latest
+            is_ubuntu_8: "true"
+    env:
+      IS_UBUNTU_8: ${{ matrix.is_ubuntu_8 }}
     steps:
       - name: Log node version
         run: node --version
@@ -17,4 +27,6 @@ jobs:
         with:
           node-version: ${{ matrix.node_version }}
       - name : Log node version
-        run: node --version
+        run: |
+          node --version
+          eco $IS_UBUNTU_8
