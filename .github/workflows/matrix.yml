@@ -29,4 +29,4 @@ jobs:
       - name : Log node version
         run: |
           node --version
-          eco $IS_UBUNTU_8
+          echo $IS_UBUNTU_8
