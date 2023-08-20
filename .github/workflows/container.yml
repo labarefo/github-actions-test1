@@ -6,20 +6,20 @@ jobs:
   docker-steps:
     runs-on: ubuntu-latest
     container:
-      image: node:10.18.0-jessie
+      image: node:20.5.1-alpine3.17
     steps:
       - name: Log node version
         run: |
           node -v
 
       - name: Step with docker
-        uses: docker://node:12.14.1-alpine3.10
+        uses: docker://node:16.20-alpine3.18
         with:
           entrypoint: '/bin/echo'
           args: 'Hello World'
 
       - name: docker Log node version
-        uses: docker://node:12.14.1-alpine3.10
+        uses: docker://node:16.20-alpine3.18
         with:
           entrypoint: /usr/local/bin/node
           args: -v
