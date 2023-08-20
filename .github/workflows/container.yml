@@ -12,17 +12,17 @@ jobs:
         run: |
           node -v
 
-#      - name: Step with docker
-#        uses: docker://node:16.20-alpine3.18
-#        with:
-#          entrypoint: '/bin/echo'
-#          args: 'Hello World'
-#
-#      - name: docker Log node version
-#        uses: docker://node:16.20-alpine3.18
-#        with:
-#          entrypoint: /usr/local/bin/node
-#          args: -v
+      - name: Step with docker
+        uses: docker://node:16.20.2-alpine3.18
+        with:
+          entrypoint: '/bin/echo'
+          args: 'Hello World'
+
+      - name: docker Log node version
+        uses: docker://node:16.20.2-alpine3.18
+        with:
+          entrypoint: /usr/local/bin/node
+          args: -v
 
   node-docker:
     runs-on: ubuntu-latest
