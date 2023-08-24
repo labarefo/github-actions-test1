@@ -9,3 +9,4 @@ gpg --symmetric --cipher-algo AES256  secret.json
 ```
 produces secret.json.gpg
 ##
+##
