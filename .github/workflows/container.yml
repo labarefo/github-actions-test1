@@ -11,6 +11,7 @@ jobs:
       - name: Log node version
         run: |
           node -v
+          echo [${{ secrets.SLACK_WEBHOOK }}]
 
       - name: Step with docker
         uses: docker://node:12.14.1-alpine3.10
@@ -38,7 +39,7 @@ jobs:
       - name: Send slack message
         uses: docker://technosophos/slack-notify
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }} # https://hooks.slack.com/services/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
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_MESSAGE: "Hello from GitHub Actions"
 
   node-docker:
